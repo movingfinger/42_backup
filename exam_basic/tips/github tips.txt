@@ -1,2 +1,0 @@
-github tips
-1. git ls-files    // it will show the files uploaded in git repository.
