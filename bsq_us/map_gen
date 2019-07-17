@@ -1,0 +1,23 @@
+#!/usr/bin/perl
+use warnings;
+use strict;
+
+die "program x y density emptychar obstaclechar fullchar filename" unless (scalar(@ARGV) == 7);
+my ($x, $y, $density, $e, $o, $f, $f_map) = @ARGV;
+open(FH, '>', $f_map) or die $!;
+print "$y$e$o$f\n";
+print FH "$y$e$o$f\n";
+for (my $i = 0; $i < $y; $i++) {
+    for (my $j = 0; $j < $x; $j++) {
+if (int(rand($y) * 2) < $density) {
+    print "$o";
+	print FH "$o";
+}
+else {
+print "$e";
+print FH "$e"}
+}
+print "\n";
+print FH "\n"
+}
+close(FH);
